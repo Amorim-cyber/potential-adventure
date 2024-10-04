@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'potential_adventure.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db.potential_adventure',
+        'USER': config("POSTGRES_USER"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
